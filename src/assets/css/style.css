@@ -1,0 +1,27 @@
+body {
+	/*background-color: pink;*/
+}
+
+.bgAzul {
+	background-color: blue;
+	color: white;
+}
+
+.fondoVerde {
+	background-color: green;
+	color: white;
+}
+
+.fondoRojo {
+	background-color: red;
+	color: white;
+}
+
+.letraGrande {
+	font-size: 16px;
+}
+
+.active {
+	font-weight: 600;
+	background-color: yellow;
+}

@@ -1,0 +1,89 @@
+<h2>{{ nombre_componente}}</h2>
+<p>{{ listado_frutas}}</p>
+
+<h2> Nuevos componenetes: </h2>
+<strong>Fruta estrella: </strong> 
+<br/>
+<div *ngIf="fruta_temporada == true">
+	<button (click)="cambiarTemporada(false);">Mostrar fruta temporada </button>
+
+	<ul>
+		<li>{{ fruta.nombre }}</li>
+		<li>{{ fruta.tiempoMaduracion}}</li>
+		<li>{{ fruta.caracteristicas }}</li>
+		<li>{{ fruta.estaRica }}</li>
+		<li>{{ tiposFruta[2].nombre }}</li>
+		<li>{{ tiposFruta[2].tiempoMaduracion}}</li>
+		<li>{{ tiposFruta[2].caracteristicas }}</li>
+		<li>{{ tiposFruta[2].estaRica }}</li>
+	</ul>
+</div>
+
+<div *ngIf="fruta_temporada == false">
+	<button (click)="cambiarTemporada(true);">Mostrar fruta no temporada </button>
+	<ul>
+		<li>{{ tiposFruta[1].nombre }}</li>
+		<li>{{ tiposFruta[1].tiempoMaduracion}}</li>
+		<li>{{ tiposFruta[1].caracteristicas }}</li>
+		<li *ngIf=" tiposFruta[1].estaRica == true ">La fruta está muy rica</li>
+		<li *ngIf=" tiposFruta[1].estaRica == false ">La fruta está muy malaaaaa</li>
+	</ul>
+</div>
+
+<hr />
+
+<h3>Listado de Tipos de fruta: </h3>
+<ul>
+	<li *ngFor="let fruta of tiposFruta; let i = index;">
+		<strong>Fruta {{ i + 1 }}</strong>
+		<ul>
+			<li>{{ fruta.nombre }}</li>
+			<li>{{ fruta.tiempoMaduracion}}</li>
+			<li>{{ fruta.caracteristicas }}</li>
+			<li>{{ fruta.estaRica }}</li>
+		</ul>
+	</li>
+</ul>
+
+<hr />
+
+<h3>Colores Switch</h3>
+
+<ul [ngSwitch] = "color">
+	<!-- Solamente se mostrará el LI que corresponda a la propiedad color definida en el módulo. Todo esto lo hará la directiva NGSWITCH-->
+	<li *ngSwitchCase="'red'" [ngStyle]="{'background':color, 'color' : 'white', 'padding' : '20px'}">Es de color ROJO</li>
+	<li *ngSwitchCase="'green'" [ngStyle]="{'background':color, 'color': 'white', 'padding' : '20px'}">Es de color VERDE</li>
+	<li *ngSwitchCase="'blue'" [ngStyle]="{'background':color, 'color': 'white', 'padding' : '20px'}">Es de color AZUL</li>
+</ul>
+
+<hr />
+
+<h3>Selector de colores: </h3>
+<button (click)="logColorSeleccionado();">Mostrar LOG</button>
+<input type="text" 	[(ngModel)]="colorSeleccionado"/>
+
+<span [style.border]="colorSeleccionado == 'red' ? '5px solid black' : '1px solid green'"
+		[class.bgAzul] = "colorSeleccionado == 'blue'"
+		[ngClass]="{
+			fondoVerde: colorSeleccionado == 'green',
+			fondoRojo: colorSeleccionado == 'red',
+			letraGrande: 1 == 1
+		}">
+	<strong>Color elegido: </strong>{{ colorSeleccionado }}
+</span>
+
+<span [ngClass]="['fondoRojo', 'letraGrande']"> Texto para poner clases</span> <!-- Para poner clases fijas -->
+
+<div [ngStyle] = "{ 'background' : colorSeleccionado, 'width' : '200px', 'height' : '200px', 'float' : 'right', 'margin-right' : '40%'}"></div>
+
+<div style="clear: both;"></div>
+
+
+
+
+
+
+
+
+
+
