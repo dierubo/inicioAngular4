@@ -13,9 +13,14 @@ export class HomeComponent {
 	public listadoRopa:Array<string>;
 	public prendaGuardar:string;
 
+	public fecha;
+	public nombre:string = 'JUAN LoPez MartineZ';
+
 	constructor(
 		private _ropaService: RopaService // De esta forma tengo una instancia en la clase del servicio
-	){}
+	){
+		this.fecha = new Date(2017, 11, 29); // Saldrá diciembre como mes porque los meses empiezan en 0
+	}
 
 	ngOnInit() {
 		// Llamada a la variable declarada en la clase y luego se llama al método 'prueba' ya que se ha importado el servicio

@@ -2,6 +2,22 @@
 
 <hr />
 
+{{ fecha | date: 'fullDate' | uppercase | lowercase }}
+
+<br/>
+
+{{ fecha | date: 'dd/MM/yyyy' }}
+
+<br/>
+<br/>
+{{ nombre | uppercase | lowercase }}
+<br/>
+<br/>
+
+{{ 5 | conversor: 7 }} <!-- Uso de pipes personalizadas -->
+
+<br/>
+<br/>
 <input type="text" [(ngModel)]="prendaGuardar"/>
 <button (click)="guardarPrenda();">Añadir prenda</button>
 
