@@ -7,6 +7,7 @@ import { EmpleadoComponent } from './empleado/empleado.component';
 import { FrutaComponent } from './fruta/fruta.component';
 import { HomeComponent } from './home/home.component';
 import { ContactoComponent } from './contacto/contacto.component';
+import { CochesComponent } from './coches/coches.component';
 
 // DEfinir una variable un array de objetos Routes. Configuración de la ruta.
 const appRoutes: Routes = [
@@ -16,6 +17,7 @@ const appRoutes: Routes = [
 	{ path: 'home', component: HomeComponent},
 	{ path: 'contacto', component: ContactoComponent},
 	{ path: 'contacto/:page', component: ContactoComponent}, // Ruta de contacto con parámetros
+	{ path: 'coches', component: CochesComponent}, // Ruta para coches
 	{ path: '**', component: HomeComponent} // URL por defecto cuando la ruta falle
 ];
 
